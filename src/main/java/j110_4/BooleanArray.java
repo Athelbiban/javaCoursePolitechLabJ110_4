@@ -1,24 +1,46 @@
 package j110_4;
 
 public class BooleanArray implements CustomArray {
-    private int[] array = new int[size/32];
+    private final boolean[] ARRAY = new boolean[size];
+
     @Override
     public boolean getByIndex(int index) {
-        return false;
+        dataVerification(index);
+        return ARRAY[index];
     }
 
     @Override
     public void revers(int index) {
+        dataVerification(index);
+        ARRAY[index] = !ARRAY[index];
     }
 
     @Override
     public void setTrue(int index) {
-
+        dataVerification(index);
+        ARRAY[index] = true;
     }
 
     @Override
     public void setBool(int index, boolean value) {
+        dataVerification(index);
+        ARRAY[index] = value;
+    }
 
+    @Override
+    public void setFalse(int index) {
+        dataVerification(index);
+        ARRAY[index] = false;
+    }
+
+    @Override
+    public int countInTrue() {
+        int index = 0, count = 0;
+        while (index < 64) {
+            count += getByIndex(index) ? 1 : 0;
+            index++;
+        }
+        return count;
     }
 
     @Override
@@ -28,5 +50,11 @@ public class BooleanArray implements CustomArray {
             str[i] = getByIndex(i) ? "1" : "0";
         }
         return String.join(", ", str);
+    }
+
+    private static void dataVerification(int data) {
+        if (data < 0 || data >= 64) throw new IllegalArgumentException(
+                "IllegalArgumentException: number must be >= 0 and < 64"
+        );
     }
 }

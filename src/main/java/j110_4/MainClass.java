@@ -2,16 +2,28 @@ package j110_4;
 
 public class MainClass {
     public static void main(String[] args) {
-        CustomArray array = new IntegerArray();
+        CustomArray intArr = new IntegerArray();
+        CustomArray boolArr = new BooleanArray();
 
-        System.out.println(array);
-        array.setBool(2, true);
-        System.out.println(array);
-        array.setBool(2, true);
-        System.out.println(array);
-        array.setBool(2, false);
-        System.out.println(array);
-        array.setBool(2, false);
-        System.out.println(array);
+        // Проверка для IntegerArray
+//        System.out.println(intArr);
+//        System.out.println();
+//        intArr.setTrue(1);
+//        intArr.setTrue(3);
+//        intArr.setTrue(5);
+//        intArr.setTrue(7);
+//        intArr.setTrue(9);
+//        System.out.println(intArr);
+//        System.out.println(intArr.countInTrue());
+
+        // Проверка для BooleanArray
+        System.out.println(boolArr);
+        System.out.println();
+        boolArr.setTrue(1);
+        boolArr.setTrue(3);
+        boolArr.setTrue(5);
+        boolArr.setTrue(7);
+        System.out.println(boolArr);
+        System.out.println(boolArr.countInTrue());
     }
 }

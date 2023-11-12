@@ -8,4 +8,6 @@ public interface CustomArray {
     void revers(int index);
     void setTrue(int index);
     void setBool(int index, boolean value);
+    void setFalse(int index);
+    int countInTrue();
 }
