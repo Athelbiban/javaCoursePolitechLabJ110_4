@@ -59,7 +59,7 @@ public class IntegerArray implements CustomArray{
     @Override
     public int countInTrue() {
         int indexArray = 0, count = 0;
-        while (indexArray < 64) {
+        while (indexArray < size) {
             count += getByIndex(indexArray) ? 1 : 0;
             indexArray++;
         }
@@ -77,8 +77,8 @@ public class IntegerArray implements CustomArray{
     }
 
     private static void dataVerification(int data) {
-        if (data < 0 || data >= 64) throw new IllegalArgumentException(
-                "IllegalArgumentException: number must be >= 0 and < 64"
+        if (data < 0 || data >= size) throw new IllegalArgumentException(
+                "IllegalArgumentException: number must be >= 0 and < 1024"
         );
     }
 }

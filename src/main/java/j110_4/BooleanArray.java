@@ -36,7 +36,7 @@ public class BooleanArray implements CustomArray {
     @Override
     public int countInTrue() {
         int index = 0, count = 0;
-        while (index < 64) {
+        while (index < size) {
             count += getByIndex(index) ? 1 : 0;
             index++;
         }
@@ -53,8 +53,8 @@ public class BooleanArray implements CustomArray {
     }
 
     private static void dataVerification(int data) {
-        if (data < 0 || data >= 64) throw new IllegalArgumentException(
-                "IllegalArgumentException: number must be >= 0 and < 64"
+        if (data < 0 || data >= size) throw new IllegalArgumentException(
+                "IllegalArgumentException: number must be >= 0 and < 1024"
         );
     }
 }

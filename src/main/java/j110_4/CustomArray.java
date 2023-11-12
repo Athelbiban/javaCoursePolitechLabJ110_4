@@ -2,7 +2,7 @@ package j110_4;
 
 public interface CustomArray {
 
-    int size = 64;
+    int size = 1024;
 
     boolean getByIndex(int index);
     void revers(int index);
