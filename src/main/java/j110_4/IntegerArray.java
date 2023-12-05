@@ -39,9 +39,12 @@ public class IntegerArray implements CustomArray{
     // установка элемента с заданным индексом заданным логическим значением
     @Override
     public void setBool(int index, boolean value) {
-        dataVerification(index);
-        int indexArray = index / 32;
-        ARRAY[indexArray] = value ? 1 : 0;
+        if (value) {
+            this.setTrue(index);
+        }
+        else {
+            this.setFalse(index);
+        }
     }
 
     // сброс в false элемента с заданным индексом
